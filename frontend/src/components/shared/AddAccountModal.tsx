@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { PhoneNumberInput } from '@/components/shared/PhoneNumberInput'
 import { Label } from '@/components/ui/label'
 import { AccountForm } from '@/components/shared/AccountForm'
 import { CurrencyDisplay } from '@/components/shared/CurrencyDisplay'
@@ -654,7 +655,7 @@ function TradeRepublicWizard({ onBack }: { onDone: () => void; onBack: () => voi
                 <Smartphone className="size-4 inline-block mr-1" />
                 {t('sync.tr.phone')}
               </Label>
-              <Input id="tr-phone" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} required placeholder="+49..." autoFocus />
+              <PhoneNumberInput id="tr-phone" value={phone} onChange={setPhone} required autoFocus />
             </div>
             <div className="space-y-2">
               <Label htmlFor="tr-pin">
