@@ -5,6 +5,7 @@ import { api } from '@/lib/api-client'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { PhoneNumberInput } from '@/components/shared/PhoneNumberInput'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import {
@@ -263,14 +264,7 @@ export function TradeRepublicTab() {
                   <Smartphone className="size-4 inline-block mr-1" />
                   {t('sync.tr.phone')}
                 </Label>
-                <Input
-                  id="tr-phone"
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  required
-                  placeholder="+49..."
-                />
+                <PhoneNumberInput id="tr-phone" value={phone} onChange={setPhone} required />
               </div>
 
               <div className="space-y-2">

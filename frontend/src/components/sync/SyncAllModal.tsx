@@ -16,6 +16,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { EmptyState } from '@/components/shared/EmptyState'
 import { Skeleton } from '@/components/ui/skeleton'
 import { Input } from '@/components/ui/input'
+import { PhoneNumberInput } from '@/components/shared/PhoneNumberInput'
 import { Label } from '@/components/ui/label'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import {
@@ -602,12 +603,10 @@ export function SyncAllModal({ open, onOpenChange }: SyncAllModalProps) {
                                 <Smartphone className="size-3 inline-block mr-1" />
                                 {t('sync.tr.phone')}
                               </Label>
-                              <Input
+                              <PhoneNumberInput
                                 id="tr-modal-phone"
-                                type="tel"
                                 value={trPhone}
-                                onChange={e => setTrPhone(e.target.value)}
-                                placeholder="+49..."
+                                onChange={setTrPhone}
                                 className="h-8 text-sm"
                                 required
                               />
